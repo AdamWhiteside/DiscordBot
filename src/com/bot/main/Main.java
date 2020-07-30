@@ -11,7 +11,7 @@ public class Main {
     public static String prefix = "`";
 
     public static void main(String[] args) throws LoginException {
-        jda = new JDABuilder(AccountType.BOT).setToken("NzM4MTMzNDg1NTExNzcwMTMz.XyHeYA.jgxa_5KXI3yAl9PX6BQQ-G-EQfI").build();
+        jda = new JDABuilder(AccountType.BOT).setToken(botToken.n()).build();
 
         jda.addEventListener(new Commands());
     }
