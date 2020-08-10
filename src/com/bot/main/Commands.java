@@ -58,7 +58,7 @@ public class Commands extends ListenerAdapter {
                     ab = 99;
                 }
 
-                if(ab < 99){
+                if (ab < 99) {
                     ab++;
                 }
 
@@ -80,13 +80,23 @@ public class Commands extends ListenerAdapter {
         //
         //
         else if (args[0].equalsIgnoreCase(Main.prefix + "help")) {
-
+            commandClean(event);
+            event.getChannel().sendMessage(helpText()).queue();
         }
     }
 
     public void commandClean(GuildMessageReceivedEvent event) {
         event.getChannel().sendMessage("_").queue();
         event.getChannel().deleteMessages(event.getChannel().getHistory().retrievePast(2).complete()).queue();
+    }
+
+    public String helpText() {
+        String combo;
+        combo = "commands begin with \\` \n";
+        combo += "`test: prints hello world` \n";
+        combo += "`clear ##: deletes the specified number of messages between 1 and 100` \n";
+
+        return combo;
     }
 
 }

@@ -1,5 +1,7 @@
 package com.bot.main;
 
+import events.GuildMemberJoin;
+import events.GuildMemberLeave;
 import net.dv8tion.jda.api.AccountType;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -14,6 +16,8 @@ public class Main {
         jda = new JDABuilder(AccountType.BOT).setToken(botToken.n()).build();
 
         jda.addEventListener(new Commands());
+        jda.addEventListener(new GuildMemberJoin());
+        jda.addEventListener(new GuildMemberLeave());
     }
 
 }
