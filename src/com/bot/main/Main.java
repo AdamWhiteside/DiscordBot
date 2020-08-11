@@ -2,6 +2,8 @@ package com.bot.main;
 
 import events.GuildMemberJoin;
 import events.GuildMemberLeave;
+import events.GuildMessageReactionAdd;
+import events.GuildMessageReceived;
 import net.dv8tion.jda.api.AccountType;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -18,6 +20,8 @@ public class Main {
         jda.addEventListener(new Commands());
         jda.addEventListener(new GuildMemberJoin());
         jda.addEventListener(new GuildMemberLeave());
+        jda.addEventListener(new GuildMessageReceived());
+        jda.addEventListener(new GuildMessageReactionAdd());
     }
 
 }
